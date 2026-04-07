@@ -51,11 +51,11 @@ export default function Slide04Stats({ total }: { total: number }) {
               >
                 {s.num}
               </div>
-              <div className="text-sm leading-[1.5] mt-3" style={{ color: "rgba(255,255,255,0.7)" }}>
+              <div className="text-[15px] leading-[1.55] mt-3" style={{ color: "rgba(255,255,255,0.7)" }}>
                 {s.label}
               </div>
             </div>
-            <div className="text-[9px] italic mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <div className="text-[11px] italic mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>
               {s.source}
             </div>
           </div>

@@ -44,23 +44,23 @@ export default function CaseSlide({ slideNum, total, heading, tag, tagIcon, step
         </h2>
       </div>
 
-      {/* Main grid — stretches to fill remaining height */}
-      <div className="grid grid-cols-2 gap-12 flex-1" style={{ minHeight: 0 }}>
+      {/* Main grid — natural flow, left-aligned */}
+      <div className="grid grid-cols-2 gap-10 flex-1 items-start">
 
-        {/* Left column: tag → steps distributed → note */}
-        <div className="flex flex-col min-h-0">
+        {/* Left column */}
+        <div>
           {/* Tag pill */}
           <div
-            className="inline-flex items-center gap-[6px] rounded-full px-3 py-[5px] mb-5 font-[family-name:var(--font-jakarta)] text-[11px] font-semibold uppercase tracking-[0.08em] self-start flex-shrink-0"
+            className="inline-flex items-center gap-[6px] rounded-full px-3 py-[5px] mb-[18px] font-[family-name:var(--font-jakarta)] text-[11px] font-semibold uppercase tracking-[0.08em]"
             style={{ background: "rgba(163,191,250,0.1)", border: "1px solid rgba(163,191,250,0.25)", color: "var(--blue-dark)" }}
           >
             <Icon icon={tagIcon} width={12} />
             {tag}
           </div>
 
-          {/* Steps — fill remaining space, spread evenly */}
+          {/* Steps */}
           <div
-            className="flex flex-col justify-between flex-1 pl-5"
+            className="flex flex-col gap-[22px] pl-5"
             style={{ borderLeft: "2px solid var(--g100)" }}
           >
             {steps.map((s) => (
@@ -87,10 +87,10 @@ export default function CaseSlide({ slideNum, total, heading, tag, tagIcon, step
             ))}
           </div>
 
-          {/* Note — pinned to bottom */}
+          {/* Note */}
           {note && (
             <div
-              className="leading-[1.5] mt-4 px-[14px] py-[10px] rounded-r-lg flex-shrink-0"
+              className="leading-[1.5] mt-5 px-[14px] py-[10px] rounded-r-lg"
               style={{
                 fontSize: 11.5,
                 background: "rgba(163,191,250,0.07)",
@@ -103,19 +103,19 @@ export default function CaseSlide({ slideNum, total, heading, tag, tagIcon, step
           )}
         </div>
 
-        {/* Right column: metric cards fill full height equally */}
-        <div className="flex flex-col gap-3 min-h-0">
+        {/* Right column: metric cards, natural sizing */}
+        <div className="flex flex-col gap-[10px]">
           {metrics.map((m) => {
             const s = metricStyles[m.variant];
             return (
               <div
                 key={m.value}
-                className="flex-1 rounded-[14px] px-5 flex flex-col justify-center gap-[7px]"
+                className="rounded-[14px] px-5 py-5 flex flex-col gap-[6px]"
                 style={{ background: s.bg, border: (s as { border?: string }).border }}
               >
                 <div
                   className="font-[family-name:var(--font-playfair)] leading-none tracking-[-0.03em]"
-                  style={{ fontSize: m.variant === "primary" ? 54 : 36, color: s.valueColor }}
+                  style={{ fontSize: m.variant === "primary" ? 52 : 34, color: s.valueColor }}
                 >
                   {m.value}
                 </div>
