@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import SlideShell from "./SlideShell";
 import PartnerCarousel from "./PartnerCarousel";
 
@@ -18,6 +19,7 @@ interface Props {
   total: number;
   heading: string;
   tag: string;
+  tagIcon: string;
   steps: CaseStep[];
   note?: React.ReactNode;
   metrics: Metric[];
@@ -29,7 +31,7 @@ const metricStyles = {
   tertiary: { bg: "rgba(181,234,215,0.1)", valueColor: "var(--green-dark)", labelColor: "var(--g600)", border: "1px solid rgba(181,234,215,0.28)" },
 };
 
-export default function CaseSlide({ slideNum, total, heading, tag, steps, note, metrics }: Props) {
+export default function CaseSlide({ slideNum, total, heading, tag, tagIcon, steps, note, metrics }: Props) {
   return (
     <SlideShell slideNum={slideNum} total={total}>
       <div className="flex-shrink-0 mb-4">
@@ -48,6 +50,7 @@ export default function CaseSlide({ slideNum, total, heading, tag, steps, note, 
             className="inline-flex items-center gap-[6px] rounded-full px-3 py-1 mb-[14px] font-[family-name:var(--font-jakarta)] text-[10px] font-semibold uppercase tracking-[0.08em]"
             style={{ background: "rgba(163,191,250,0.1)", border: "1px solid rgba(163,191,250,0.25)", color: "var(--blue-dark)" }}
           >
+            <Icon icon={tagIcon} width={11} />
             {tag}
           </div>
           <div className="flex flex-col gap-[14px] pl-[14px]" style={{ borderLeft: "2px solid var(--g100)" }}>

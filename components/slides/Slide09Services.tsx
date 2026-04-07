@@ -1,20 +1,27 @@
+import { Icon } from "@iconify/react";
 import SlideShell from "../SlideShell";
 
 const services = [
   {
-    icon: "💡",
+    icon: "mdi:lightbulb-outline",
+    iconColor: "var(--blue)",
+    iconSize: 17,
     title: "AI Labs",
     desc: "Workshops de co-criação e capacitação para descobrir onde a IA gera valor real no seu contexto — com o time diretamente envolvido na operação.",
     featured: true,
   },
   {
-    icon: "📊",
+    icon: "mdi:chart-line",
+    iconColor: "var(--purple-dark)",
+    iconSize: 15,
     title: "Inteligência de negócios",
     desc: "Identificamos onde sua operação pode melhorar e desenvolvemos soluções em software e IA para que você tome decisões com base em dados reais do seu negócio.",
     featured: false,
   },
   {
-    icon: "⚙️",
+    icon: "mdi:code-braces",
+    iconColor: "var(--blue-dark)",
+    iconSize: 15,
     title: "Desenvolvimento",
     desc: "Soluções proprietárias que se encaixam nos seus sistemas atuais — sem migrações, sem dependência de SaaS. Com acompanhamento contínuo para evoluir junto com o seu negócio.",
     featured: false,
@@ -44,10 +51,10 @@ export default function Slide09Services({ total }: { total: number }) {
             }}
           >
             <div
-              className="w-8 h-8 rounded-[9px] flex items-center justify-center flex-shrink-0 text-base"
+              className="w-8 h-8 rounded-[9px] flex items-center justify-center flex-shrink-0"
               style={{ background: s.featured ? "rgba(255,255,255,0.09)" : "var(--bg)" }}
             >
-              {s.icon}
+              <Icon icon={s.icon} width={s.iconSize} style={{ color: s.iconColor }} />
             </div>
             <h3
               className="font-[family-name:var(--font-jakarta)] font-semibold tracking-[-0.01em]"

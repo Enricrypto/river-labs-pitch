@@ -1,10 +1,11 @@
+import { Icon } from "@iconify/react";
 import SlideShell from "../SlideShell";
 
 const sectors = [
-  { label: "Logística", icon: "🚚", bg: "rgba(163,191,250,0.12)", color: "var(--blue-dark)" },
-  { label: "Varejo / E-commerce", icon: "🏪", bg: "rgba(181,234,215,0.15)", color: "var(--green-dark)" },
-  { label: "Serviços", icon: "🏢", bg: "rgba(215,189,226,0.15)", color: "var(--purple-dark)" },
-  { label: "Compliance", icon: "⚖️", bg: "rgba(252,211,77,0.15)", color: "var(--amber-dark)" },
+  { label: "Logística", icon: "mdi:truck-outline", bg: "rgba(163,191,250,0.12)", color: "var(--blue-dark)" },
+  { label: "Varejo / E-commerce", icon: "mdi:store-outline", bg: "rgba(181,234,215,0.15)", color: "var(--green-dark)" },
+  { label: "Serviços", icon: "mdi:storefront-outline", bg: "rgba(215,189,226,0.15)", color: "var(--purple-dark)" },
+  { label: "Compliance", icon: "mdi:scale-balance", bg: "rgba(252,211,77,0.15)", color: "var(--amber-dark)" },
 ];
 
 export default function Slide10Sectors({ total }: { total: number }) {
@@ -36,9 +37,9 @@ export default function Slide10Sectors({ total }: { total: number }) {
             </p>
             <div
               className="flex items-center justify-center rounded-2xl"
-              style={{ width: 72, height: 72, background: s.bg, fontSize: 36 }}
+              style={{ width: 72, height: 72, background: s.bg }}
             >
-              {s.icon}
+              <Icon icon={s.icon} width={48} style={{ color: s.color }} />
             </div>
           </div>
         ))}

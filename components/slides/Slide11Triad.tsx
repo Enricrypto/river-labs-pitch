@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import SlideShell from "../SlideShell";
 
 export default function Slide11Triad({ total }: { total: number }) {
@@ -36,10 +37,7 @@ export default function Slide11Triad({ total }: { total: number }) {
               boxShadow: "0 4px 24px rgba(0,0,0,0.22)",
             }}
           >
-            <svg viewBox="0 0 64 64" className="w-5 h-5" fill="none" stroke="rgba(163,191,250,0.8)" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 24 Q21 8 32 24 T54 24" />
-              <path d="M10 40 Q21 24 32 40 T54 40" />
-            </svg>
+            <Icon icon="mdi:account-group-outline" width={20} style={{ color: "var(--blue)" }} />
             <span className="font-[family-name:var(--font-jakarta)] text-[10px] font-bold uppercase tracking-[0.1em] mt-[2px]" style={{ color: "rgba(255,255,255,0.6)" }}>
               Pessoas
             </span>

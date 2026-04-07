@@ -1,11 +1,12 @@
+import { Icon } from "@iconify/react";
 import SlideShell from "../SlideShell";
 
 const steps = [
-  { num: "01", title: "Descoberta", deliverable: "Mapa de processo", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "🔍", iconBg: "rgba(163,191,250,0.2)" },
-  { num: "02", title: "Diagnóstico", deliverable: "Matriz de casos", bg: "rgba(215,189,226,0.09)", border: "rgba(215,189,226,0.2)", icon: "📊", iconBg: "rgba(215,189,226,0.2)" },
-  { num: "03", title: "Design da solução", deliverable: "Plano de arquitetura", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "🧩", iconBg: "rgba(181,234,215,0.2)" },
-  { num: "04", title: "Piloto", deliverable: "Protótipo + métricas", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "🚀", iconBg: "rgba(163,191,250,0.2)" },
-  { num: "05", title: "Deploy & Otimização", deliverable: "Sistema em produção", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "📈", iconBg: "rgba(181,234,215,0.2)" },
+  { num: "01", title: "Descoberta", deliverable: "Mapa de processo", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "mdi:magnify", iconColor: "var(--blue)", iconBg: "rgba(163,191,250,0.2)" },
+  { num: "02", title: "Diagnóstico", deliverable: "Matriz de casos", bg: "rgba(215,189,226,0.09)", border: "rgba(215,189,226,0.2)", icon: "mdi:chart-bar", iconColor: "var(--purple)", iconBg: "rgba(215,189,226,0.2)" },
+  { num: "03", title: "Design da solução", deliverable: "Plano de arquitetura", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "mdi:cpu-64-bit", iconColor: "var(--green)", iconBg: "rgba(181,234,215,0.2)" },
+  { num: "04", title: "Piloto", deliverable: "Protótipo + métricas", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "mdi:rocket-launch-outline", iconColor: "var(--blue)", iconBg: "rgba(163,191,250,0.2)" },
+  { num: "05", title: "Deploy & Otimização", deliverable: "Sistema em produção", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "mdi:trending-up", iconColor: "var(--green)", iconBg: "rgba(181,234,215,0.2)" },
 ];
 
 export default function Slide12Process({ total }: { total: number }) {
@@ -31,8 +32,8 @@ export default function Slide12Process({ total }: { total: number }) {
                 className="flex-1 rounded-xl flex flex-col gap-[6px] cursor-default"
                 style={{ padding: "12px 10px", background: s.bg, border: `1px solid ${s.border}` }}
               >
-                <div className="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style={{ background: s.iconBg }}>
-                  {s.icon}
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: s.iconBg }}>
+                  <Icon icon={s.icon} width={14} style={{ color: s.iconColor }} />
                 </div>
                 <div className="font-[family-name:var(--font-jakarta)] text-[10px] font-bold tracking-[0.12em] uppercase" style={{ color: "var(--g700)" }}>
                   {s.num}
@@ -49,9 +50,7 @@ export default function Slide12Process({ total }: { total: number }) {
               </div>
               {i < steps.length - 1 && (
                 <div className="flex items-center flex-shrink-0" style={{ color: "var(--g300)" }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
+                  <Icon icon="mdi:chevron-right" width={11} />
                 </div>
               )}
             </div>

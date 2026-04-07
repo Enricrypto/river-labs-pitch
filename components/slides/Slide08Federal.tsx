@@ -7,6 +7,7 @@ export default function Slide08Federal({ total }: { total: number }) {
       total={total}
       heading="Infraestrutura crítica e defesa contra ameaças de IA"
       tag="Governo Federal · Defesa contra IA · AWS Certified"
+      tagIcon="mdi:shield-check-outline"
       steps={[
         { label: "Desafio 1 · Infraestrutura Pública", title: "Bilhões em obras públicas sem margem para erro", text: "Agências estaduais americanas precisam de sistemas de gestão rodoviária em conformidade federal para administrar 15+ estados em produção." },
         { label: "Desafio 2 · Segurança Corporativa", title: "Uma nova geração de ataques potencializados por IA", text: "O navegador é o vetor de ataque nº1. Empresas precisam de proteção em tempo real contra ameaças de IA, sem fricção para o usuário final." },

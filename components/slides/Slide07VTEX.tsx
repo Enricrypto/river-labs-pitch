@@ -7,6 +7,7 @@ export default function Slide07VTEX({ total }: { total: number }) {
       total={total}
       heading="De 10h por RFP a resposta automática — 1.094 horas salvas em 6 meses"
       tag="AI RFP Assistant · Automação de Processos"
+      tagIcon="mdi:robot-outline"
       steps={[
         { label: "Desafio", title: "10 horas por proposta, respondidas manualmente", text: "Equipes respondiam ~117 questões técnicas e de compliance por RFP sem padronização." },
         { label: "Solução", title: "AI RFP Assistant interno em produção global", text: "112 RFPs processados e 13.100 respostas geradas em 6 meses — EMEA, US, Brasil, LATAM e APAC." },
