@@ -1,5 +1,37 @@
+"use client";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import SlideShell from "../SlideShell";
+
+const cards = [
+  {
+    position: "absolute left-1/2 top-0 -translate-x-1/2",
+    label: "Co-criamos",
+    labelColor: "var(--blue-dark)",
+    text: "Junto ao time da operação",
+    hoverBorder: "rgba(163,191,250,0.65)",
+    hoverShadow: "rgba(163,191,250,0.28)",
+    hoverBg: "rgba(163,191,250,0.06)",
+  },
+  {
+    position: "absolute left-0 bottom-0",
+    label: "Capacitamos",
+    labelColor: "var(--green-dark)",
+    text: "Treinamos o time para usar e evoluir a ferramenta",
+    hoverBorder: "rgba(181,234,215,0.65)",
+    hoverShadow: "rgba(181,234,215,0.28)",
+    hoverBg: "rgba(181,234,215,0.06)",
+  },
+  {
+    position: "absolute right-0 bottom-0",
+    label: "Entregamos",
+    labelColor: "var(--purple-dark)",
+    text: "Uma ferramenta pronta para ser usada — na sua infraestrutura",
+    hoverBorder: "rgba(215,189,226,0.65)",
+    hoverShadow: "rgba(215,189,226,0.28)",
+    hoverBg: "rgba(215,189,226,0.06)",
+  },
+];
 
 export default function Slide11Triad({ total }: { total: number }) {
   return (
@@ -43,32 +75,46 @@ export default function Slide11Triad({ total }: { total: number }) {
             </span>
           </div>
 
-          {/* Top: Co-criamos */}
-          <TriadCard className="absolute left-1/2 top-0 -translate-x-1/2" label="Co-criamos" labelColor="var(--blue-dark)" text="Junto ao time da operação" />
-
-          {/* Bottom-left: Capacitamos */}
-          <TriadCard className="absolute left-0 bottom-0" label="Capacitamos" labelColor="var(--green-dark)" text="Treinamos o time para usar e evoluir a ferramenta" />
-
-          {/* Bottom-right: Entregamos */}
-          <TriadCard className="absolute right-0 bottom-0" label="Entregamos" labelColor="var(--purple-dark)" text="Uma ferramenta pronta para ser usada — na sua infraestrutura" />
+          {/* Triad cards */}
+          {cards.map((c) => (
+            <TriadCard key={c.label} {...c} />
+          ))}
         </div>
       </div>
     </SlideShell>
   );
 }
 
-function TriadCard({ className, label, labelColor, text }: { className: string; label: string; labelColor: string; text: string }) {
+interface TriadCardProps {
+  position: string;
+  label: string;
+  labelColor: string;
+  text: string;
+  hoverBorder: string;
+  hoverShadow: string;
+  hoverBg: string;
+}
+
+function TriadCard({ position, label, labelColor, text, hoverBorder, hoverShadow, hoverBg }: TriadCardProps) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <div
-      className={`${className} rounded-xl text-center z-10`}
+      className={`${position} rounded-xl text-center z-10 cursor-default`}
       style={{
-        background: "var(--white)",
-        border: "1px solid var(--g200)",
+        background: hovered ? hoverBg : "var(--white)",
+        border: `1px solid ${hovered ? hoverBorder : "var(--g200)"}`,
         padding: "10px 14px",
         minWidth: 116,
         maxWidth: 210,
-        boxShadow: "0 2px 14px rgba(0,0,0,0.06)",
+        boxShadow: hovered
+          ? `0 8px 28px ${hoverShadow}, 0 2px 8px rgba(0,0,0,0.06)`
+          : "0 2px 14px rgba(0,0,0,0.06)",
+        transform: hovered ? "translateY(-3px) scale(1.03)" : "translateY(0) scale(1)",
+        transition: "all 0.2s ease",
       }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <div
         className="font-[family-name:var(--font-jakarta)] text-[15px] font-bold uppercase tracking-[0.08em] mb-[3px]"
