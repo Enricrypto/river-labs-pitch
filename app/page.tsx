@@ -17,6 +17,11 @@ import Slide13Closing from "@/components/slides/Slide13Closing";
 
 const TOTAL = 13;
 
+// Outer background per slide (matches Reveal.js data-background-color)
+const slideBgs: Record<number, string> = {
+  3: "var(--dark)", // Slide 04 Stats — full dark
+};
+
 const slides = [
   Slide01Opening,
   Slide02Cover,
@@ -52,7 +57,7 @@ export default function Presentation() {
   const progress = ((current + 1) / TOTAL) * 100;
 
   return (
-    <div className="w-screen h-screen flex flex-col overflow-hidden" style={{ background: "var(--bg)" }}>
+    <div className="w-screen h-screen flex flex-col overflow-hidden" style={{ background: slideBgs[current] ?? "var(--bg)", transition: "background 0.3s ease" }}>
       {/* Progress bar */}
       <div className="w-full h-[2px] flex-shrink-0" style={{ background: "var(--g100)" }}>
         <div

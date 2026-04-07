@@ -31,49 +31,51 @@ const services = [
 export default function Slide09Services({ total }: { total: number }) {
   return (
     <SlideShell slideNum={9} total={total}>
-      <div className="flex-shrink-0 mb-4">
+      <div className="flex-shrink-0 mb-5">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
-          style={{ fontSize: "clamp(20px,2.8vw,32px)", color: "var(--g900)" }}
+          style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "var(--g900)" }}
         >
           Nossas linhas de atuação
         </h2>
       </div>
-      <div className="grid flex-1" style={{ gridTemplateColumns: "1.15fr 1fr 1fr", gap: 12 }}>
-        {services.map((s) => (
-          <div
-            key={s.title}
-            className="rounded-2xl flex flex-col gap-[9px] transition-all"
-            style={{
-              padding: 22,
-              border: s.featured ? "none" : "1px solid var(--g200)",
-              background: s.featured ? "var(--dark)" : "var(--white)",
-            }}
-          >
+      <div className="flex-1 flex items-center">
+        <div className="grid w-full" style={{ gridTemplateColumns: "1.15fr 1fr 1fr", gap: 14 }}>
+          {services.map((s) => (
             <div
-              className="w-8 h-8 rounded-[9px] flex items-center justify-center flex-shrink-0"
-              style={{ background: s.featured ? "rgba(255,255,255,0.09)" : "var(--bg)" }}
-            >
-              <Icon icon={s.icon} width={s.iconSize} style={{ color: s.iconColor }} />
-            </div>
-            <h3
-              className="font-[family-name:var(--font-jakarta)] font-semibold tracking-[-0.01em]"
+              key={s.title}
+              className="rounded-2xl flex flex-col gap-[10px] transition-all"
               style={{
-                fontSize: s.featured ? 19 : 17,
-                color: s.featured ? "var(--white)" : "var(--g900)",
-                marginTop: s.featured ? 6 : 0,
+                padding: "20px 22px",
+                border: s.featured ? "none" : "1px solid var(--g200)",
+                background: s.featured ? "var(--dark)" : "var(--white)",
               }}
             >
-              {s.title}
-            </h3>
-            <p
-              className="text-sm leading-[1.55]"
-              style={{ color: s.featured ? "rgba(255,255,255,0.68)" : "var(--g500)" }}
-            >
-              {s.desc}
-            </p>
-          </div>
-        ))}
+              <div
+                className="w-8 h-8 rounded-[9px] flex items-center justify-center flex-shrink-0"
+                style={{ background: s.featured ? "rgba(255,255,255,0.09)" : "var(--bg)" }}
+              >
+                <Icon icon={s.icon} width={s.iconSize} style={{ color: s.iconColor }} />
+              </div>
+              <h3
+                className="font-[family-name:var(--font-jakarta)] font-semibold tracking-[-0.01em]"
+                style={{
+                  fontSize: s.featured ? 20 : 18,
+                  color: s.featured ? "var(--white)" : "var(--g900)",
+                  marginTop: s.featured ? 6 : 0,
+                }}
+              >
+                {s.title}
+              </h3>
+              <p
+                className="text-[14px] leading-[1.55]"
+                style={{ color: s.featured ? "rgba(255,255,255,0.68)" : "var(--g500)" }}
+              >
+                {s.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </SlideShell>
   );

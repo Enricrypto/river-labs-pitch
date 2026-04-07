@@ -15,7 +15,7 @@ export default function Slide12Process({ total }: { total: number }) {
       <div className="flex-shrink-0 mb-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
-          style={{ fontSize: "clamp(20px,2.8vw,32px)", color: "var(--g900)" }}
+          style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "var(--g900)" }}
         >
           Passo a passo da jornada
         </h2>
