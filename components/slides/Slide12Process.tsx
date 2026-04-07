@@ -1,0 +1,63 @@
+import SlideShell from "../SlideShell";
+
+const steps = [
+  { num: "01", title: "Descoberta", deliverable: "Mapa de processo", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "🔍", iconBg: "rgba(163,191,250,0.2)" },
+  { num: "02", title: "Diagnóstico", deliverable: "Matriz de casos", bg: "rgba(215,189,226,0.09)", border: "rgba(215,189,226,0.2)", icon: "📊", iconBg: "rgba(215,189,226,0.2)" },
+  { num: "03", title: "Design da solução", deliverable: "Plano de arquitetura", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "🧩", iconBg: "rgba(181,234,215,0.2)" },
+  { num: "04", title: "Piloto", deliverable: "Protótipo + métricas", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "🚀", iconBg: "rgba(163,191,250,0.2)" },
+  { num: "05", title: "Deploy & Otimização", deliverable: "Sistema em produção", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "📈", iconBg: "rgba(181,234,215,0.2)" },
+];
+
+export default function Slide12Process({ total }: { total: number }) {
+  return (
+    <SlideShell slideNum={12} total={total}>
+      <div className="flex-shrink-0 mb-4">
+        <h2
+          className="font-[family-name:var(--font-playfair)] font-medium"
+          style={{ fontSize: "clamp(20px,2.8vw,32px)", color: "var(--g900)" }}
+        >
+          Passo a passo da jornada
+        </h2>
+      </div>
+
+      <div className="flex-1 flex flex-col justify-center gap-[14px]">
+        <div
+          className="flex items-stretch gap-[6px] rounded-[18px] flex-shrink-0"
+          style={{ background: "var(--white)", border: "1px solid var(--g100)", padding: 14, boxShadow: "0 2px 18px rgba(0,0,0,0.04)" }}
+        >
+          {steps.map((s, i) => (
+            <div key={s.num} className="flex items-stretch gap-[6px] flex-1">
+              <div
+                className="flex-1 rounded-xl flex flex-col gap-[6px] cursor-default"
+                style={{ padding: "12px 10px", background: s.bg, border: `1px solid ${s.border}` }}
+              >
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style={{ background: s.iconBg }}>
+                  {s.icon}
+                </div>
+                <div className="font-[family-name:var(--font-jakarta)] text-[10px] font-bold tracking-[0.12em] uppercase" style={{ color: "var(--g700)" }}>
+                  {s.num}
+                </div>
+                <div className="font-[family-name:var(--font-jakarta)] text-[13px] font-bold leading-[1.2]" style={{ color: "var(--g800)" }}>
+                  {s.title}
+                </div>
+                <div
+                  className="text-[10px] font-semibold uppercase tracking-[0.06em] mt-auto pt-[6px]"
+                  style={{ color: "var(--g600)", borderTop: `1px solid ${s.border}` }}
+                >
+                  {s.deliverable}
+                </div>
+              </div>
+              {i < steps.length - 1 && (
+                <div className="flex items-center flex-shrink-0" style={{ color: "var(--g300)" }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </SlideShell>
+  );
+}
