@@ -33,10 +33,11 @@ export default function Slide04Stats({ total }: { total: number }) {
           <em style={{ color: "var(--blue)", fontStyle: "italic" }}>A estratégia, não necessariamente.</em>
         </h2>
       </div>
-      <div
-        className="grid grid-cols-3 rounded-[14px] overflow-hidden flex-1"
-        style={{ gap: 1, background: "rgba(255,255,255,0.08)", margin: "16px 0" }}
-      >
+      <div className="flex-1 flex items-center">
+        <div
+          className="grid grid-cols-3 rounded-[14px] overflow-hidden w-full"
+          style={{ gap: 1, background: "rgba(255,255,255,0.08)" }}
+        >
         {stats.map((s) => (
           <div
             key={s.num}
@@ -59,6 +60,7 @@ export default function Slide04Stats({ total }: { total: number }) {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </SlideShell>
   );
