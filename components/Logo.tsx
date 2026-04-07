@@ -3,7 +3,7 @@ export default function Logo({ light = false }: { light?: boolean }) {
     <div className="flex items-center gap-[10px]">
       <svg
         viewBox="0 0 64 64"
-        className="w-[22px] h-[22px] flex-shrink-0"
+        className="w-[26px] h-[26px] flex-shrink-0"
         fill="none"
         strokeWidth={4}
         strokeLinecap="round"
@@ -14,7 +14,7 @@ export default function Logo({ light = false }: { light?: boolean }) {
         <path d="M10 40 Q21 24 32 40 T54 40" />
       </svg>
       <span
-        className="font-[family-name:var(--font-jakarta)] text-[15px] font-medium tracking-[-0.01em]"
+        className="font-[family-name:var(--font-jakarta)] text-[17px] font-medium tracking-[-0.01em]"
         style={{ color: light ? "rgba(255,255,255,0.8)" : "var(--g900)" }}
       >
         River Labs

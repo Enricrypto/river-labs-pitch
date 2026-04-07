@@ -20,22 +20,28 @@ export default function Slide02Cover({ total }: { total: number }) {
         </h1>
       </div>
       <div
-        className="flex gap-[14px] flex-shrink-0 pt-[18px]"
+        className="flex gap-[20px] flex-shrink-0 pt-[22px]"
         style={{ borderTop: "1px solid var(--g200)" }}
       >
         {team.map((m) => (
-          <div key={m.name} className="flex items-center gap-[10px] flex-1">
+          <div key={m.name} className="flex items-center gap-[14px] flex-1">
             <img
               src={m.img}
               alt={m.name}
-              className="w-[38px] h-[38px] rounded-full object-cover flex-shrink-0"
-              style={{ border: "1.5px solid var(--g200)" }}
+              className="rounded-full object-cover flex-shrink-0"
+              style={{ width: 52, height: 52, border: "1.5px solid var(--g200)" }}
             />
             <div>
-              <div className="font-[family-name:var(--font-jakarta)] text-[11.5px] font-semibold leading-[1.2]" style={{ color: "var(--g900)" }}>
+              <div
+                className="font-[family-name:var(--font-jakarta)] font-semibold leading-[1.2]"
+                style={{ fontSize: 14, color: "var(--g900)" }}
+              >
                 {m.name}
               </div>
-              <div className="text-[10px] mt-[1px] leading-[1.3]" style={{ color: "var(--g500)" }}>
+              <div
+                className="mt-[3px] leading-[1.3]"
+                style={{ fontSize: 12, color: "var(--g500)" }}
+              >
                 {m.role}
               </div>
             </div>
