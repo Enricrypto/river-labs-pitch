@@ -35,7 +35,7 @@ const cards = [
 
 export default function Slide11Triad({ total }: { total: number }) {
   return (
-    <SlideShell slideNum={11} total={total}>
+    <SlideShell slideNum={8} total={total}>
       <div className="flex-shrink-0 mb-4 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"

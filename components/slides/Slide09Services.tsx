@@ -30,7 +30,7 @@ const services = [
 
 export default function Slide09Services({ total }: { total: number }) {
   return (
-    <SlideShell slideNum={9} total={total}>
+    <SlideShell slideNum={6} total={total}>
       <div className="flex-shrink-0 mb-5 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"

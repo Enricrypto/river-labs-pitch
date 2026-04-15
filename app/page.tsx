@@ -5,17 +5,14 @@ import Slide01Opening from "@/components/slides/Slide01Opening";
 import Slide02Cover from "@/components/slides/Slide02Cover";
 import Slide03Accel from "@/components/slides/Slide03Accel";
 import Slide04Stats from "@/components/slides/Slide04Stats";
-import Slide05Bridge from "@/components/slides/Slide05Bridge";
-import Slide06Washdog from "@/components/slides/Slide06Washdog";
-import Slide07VTEX from "@/components/slides/Slide07VTEX";
-import Slide08Federal from "@/components/slides/Slide08Federal";
+import Slide06Cases from "@/components/slides/Slide06Cases";
 import Slide09Services from "@/components/slides/Slide09Services";
 import Slide10Sectors from "@/components/slides/Slide10Sectors";
 import Slide11Triad from "@/components/slides/Slide11Triad";
 import Slide12Process from "@/components/slides/Slide12Process";
 import Slide13Closing from "@/components/slides/Slide13Closing";
 
-const TOTAL = 13;
+const TOTAL = 10;
 
 // Outer background per slide (matches Reveal.js data-background-color)
 const slideBgs: Record<number, string> = {
@@ -27,10 +24,7 @@ const slides = [
   Slide02Cover,
   Slide03Accel,
   Slide04Stats,
-  Slide05Bridge,
-  Slide06Washdog,
-  Slide07VTEX,
-  Slide08Federal,
+  Slide06Cases,
   Slide09Services,
   Slide10Sectors,
   Slide11Triad,

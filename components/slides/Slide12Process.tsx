@@ -11,7 +11,7 @@ const steps = [
 
 export default function Slide12Process({ total }: { total: number }) {
   return (
-    <SlideShell slideNum={12} total={total}>
+    <SlideShell slideNum={9} total={total}>
       <div className="flex-shrink-0 mb-4 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"

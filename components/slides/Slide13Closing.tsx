@@ -3,7 +3,7 @@ import Logo from "../Logo";
 
 export default function Slide13Closing({ total }: { total: number }) {
   return (
-    <SlideShell slideNum={13} total={total} bg="var(--bg)">
+    <SlideShell slideNum={10} total={total} bg="var(--bg)">
       <div className="flex-1 flex flex-col justify-center gap-5">
         <div
           className="self-center w-full rounded-[20px] p-12 relative overflow-hidden flex flex-col justify-center"

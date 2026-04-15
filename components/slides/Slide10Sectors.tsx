@@ -10,7 +10,7 @@ const sectors = [
 
 export default function Slide10Sectors({ total }: { total: number }) {
   return (
-    <SlideShell slideNum={10} total={total}>
+    <SlideShell slideNum={7} total={total}>
       <div className="flex-shrink-0 mb-4 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
