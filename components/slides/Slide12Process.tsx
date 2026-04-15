@@ -2,17 +2,17 @@ import { Icon } from "@iconify/react";
 import SlideShell from "../SlideShell";
 
 const steps = [
-  { num: "01", title: "Descoberta", deliverable: "Mapa de processo", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "mdi:magnify", iconColor: "var(--blue)", iconBg: "rgba(163,191,250,0.2)" },
-  { num: "02", title: "Diagnóstico", deliverable: "Matriz de casos", bg: "rgba(215,189,226,0.09)", border: "rgba(215,189,226,0.2)", icon: "mdi:chart-bar", iconColor: "var(--purple)", iconBg: "rgba(215,189,226,0.2)" },
-  { num: "03", title: "Design da solução", deliverable: "Plano de arquitetura", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "mdi:cpu-64-bit", iconColor: "var(--green)", iconBg: "rgba(181,234,215,0.2)" },
-  { num: "04", title: "Piloto", deliverable: "Protótipo + métricas", bg: "rgba(163,191,250,0.09)", border: "rgba(163,191,250,0.2)", icon: "mdi:rocket-launch-outline", iconColor: "var(--blue)", iconBg: "rgba(163,191,250,0.2)" },
-  { num: "05", title: "Deploy & Otimização", deliverable: "Sistema em produção", bg: "rgba(181,234,215,0.09)", border: "rgba(181,234,215,0.2)", icon: "mdi:trending-up", iconColor: "var(--green)", iconBg: "rgba(181,234,215,0.2)" },
+  { num: "01", title: "Descoberta", deliverable: "Mapa de processo", bg: "rgba(99,102,241,0.07)", border: "rgba(99,102,241,0.2)", icon: "mdi:magnify", iconColor: "#6366F1", iconBg: "rgba(99,102,241,0.15)" },
+  { num: "02", title: "Diagnóstico", deliverable: "Matriz de casos", bg: "rgba(99,102,241,0.07)", border: "rgba(99,102,241,0.2)", icon: "mdi:chart-bar", iconColor: "#6366F1", iconBg: "rgba(99,102,241,0.15)" },
+  { num: "03", title: "Design da solução", deliverable: "Plano de arquitetura", bg: "rgba(99,102,241,0.07)", border: "rgba(99,102,241,0.2)", icon: "mdi:cpu-64-bit", iconColor: "#6366F1", iconBg: "rgba(99,102,241,0.15)" },
+  { num: "04", title: "Piloto", deliverable: "Protótipo + métricas", bg: "rgba(99,102,241,0.07)", border: "rgba(99,102,241,0.2)", icon: "mdi:rocket-launch-outline", iconColor: "#6366F1", iconBg: "rgba(99,102,241,0.15)" },
+  { num: "05", title: "Deploy & Otimização", deliverable: "Sistema em produção", bg: "rgba(99,102,241,0.07)", border: "rgba(99,102,241,0.2)", icon: "mdi:trending-up", iconColor: "#6366F1", iconBg: "rgba(99,102,241,0.15)" },
 ];
 
 export default function Slide12Process({ total }: { total: number }) {
   return (
     <SlideShell slideNum={12} total={total}>
-      <div className="flex-shrink-0 mb-4">
+      <div className="flex-shrink-0 mb-4 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
           style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "var(--g900)" }}

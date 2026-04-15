@@ -3,19 +3,19 @@ import SlideShell from "../SlideShell";
 const stats = [
   {
     num: "88%",
-    color: "var(--blue)",
+    color: "#6366F1",
     label: <>das empresas dizem usar IA — mas só <strong style={{ color: "rgba(255,255,255,0.95)" }}>6%</strong> se consideram high performers em captura de valor real.</>,
     source: "McKinsey Global Survey on AI, 2025",
   },
   {
     num: "70%",
-    color: "var(--green)",
+    color: "#818CF8",
     label: <>das iniciativas de transformação digital falham em atingir seus objetivos.</>,
     source: "McKinsey / Gartner, 2025–2026",
   },
   {
     num: "+80%",
-    color: "var(--purple)",
+    color: "#A5B4FC",
     label: <>dos projetos de IA ficam presos em pilotos que nunca chegam à operação real.</>,
     source: "MIT / RAND, via LinkedIn",
   },
@@ -24,10 +24,10 @@ const stats = [
 export default function Slide04Stats({ total }: { total: number }) {
   return (
     <SlideShell slideNum={4} total={total} dark>
-      <div className="mb-4 flex-shrink-0">
+      <div className="pt-4 mb-8 flex-shrink-0">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium leading-[1.1]"
-          style={{ fontSize: "clamp(24px,3.4vw,40px)", color: "var(--white)", maxWidth: 560 }}
+          style={{ fontSize: "clamp(28px,4vw,48px)", color: "var(--white)", maxWidth: 620 }}
         >
           A tecnologia está aí.<br />
           <em style={{ color: "var(--blue)", fontStyle: "italic" }}>A estratégia, não necessariamente.</em>

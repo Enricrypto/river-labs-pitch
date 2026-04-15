@@ -2,9 +2,9 @@ import SlideShell from "../SlideShell";
 
 const team = [
   { img: "/Leonardo_PP.png", name: "Leonardo Werner", role: "Cultura, Pessoas & Governança" },
-  { img: "/Enrique_PP.png", name: "Enrique Ibarra", role: "Engenheiro Full Stack | Blockchain" },
-  { img: "/Antonio_PP.png", name: "Antonio Rapozo", role: "Dev & Soluções Tech" },
   { img: "/Joao_PP.png", name: "João Guilherme Santos", role: "Arquiteto de Soluções" },
+  { img: "/Antonio_PP.png", name: "Antonio Rapozo", role: "Dev & Soluções Tech" },
+  { img: "/Enrique_PP.png", name: "Enrique Ibarra", role: "Engenheiro Full Stack | Blockchain" },
 ];
 
 export default function Slide02Cover({ total }: { total: number }) {
@@ -21,7 +21,7 @@ export default function Slide02Cover({ total }: { total: number }) {
       </div>
       <div
         className="flex gap-[20px] flex-shrink-0 pt-[22px]"
-        style={{ borderTop: "1px solid var(--g200)" }}
+        style={{ borderTop: "1px solid #E0E7FF" }}
       >
         {team.map((m) => (
           <div key={m.name} className="flex items-center gap-[14px] flex-1">
@@ -29,7 +29,7 @@ export default function Slide02Cover({ total }: { total: number }) {
               src={m.img}
               alt={m.name}
               className="rounded-full object-cover flex-shrink-0"
-              style={{ width: 52, height: 52, border: "1.5px solid var(--g200)" }}
+              style={{ width: 52, height: 52, border: "1.5px solid #E0E7FF" }}
             />
             <div>
               <div

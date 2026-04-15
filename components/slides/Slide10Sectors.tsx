@@ -11,7 +11,7 @@ const sectors = [
 export default function Slide10Sectors({ total }: { total: number }) {
   return (
     <SlideShell slideNum={10} total={total}>
-      <div className="flex-shrink-0 mb-4">
+      <div className="flex-shrink-0 mb-4 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
           style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "var(--g900)" }}
@@ -21,25 +21,25 @@ export default function Slide10Sectors({ total }: { total: number }) {
       </div>
       <div
         className="grid flex-1"
-        style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 16, width: "100%", maxWidth: 800, margin: "0 auto", alignContent: "center" }}
+        style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 16, width: "100%", alignContent: "center" }}
       >
         {sectors.map((s) => (
           <div
             key={s.label}
-            className="rounded-2xl flex flex-col items-center justify-center gap-3"
-            style={{ padding: "24px 16px", border: "1px solid var(--g200)", background: "var(--white)" }}
+            className="rounded-2xl flex flex-col items-center justify-center gap-4"
+            style={{ padding: "36px 20px", border: "1px solid #E0E7FF", background: "linear-gradient(135deg, #EEF0FF 0%, #EDE8FF 100%)" }}
           >
             <p
-              className="font-[family-name:var(--font-jakarta)] text-sm font-semibold text-center"
-              style={{ color: "var(--g900)" }}
+              className="font-[family-name:var(--font-jakarta)] font-semibold text-center"
+              style={{ fontSize: 16, color: "var(--g900)" }}
             >
               {s.label}
             </p>
             <div
               className="flex items-center justify-center rounded-2xl"
-              style={{ width: 72, height: 72, background: s.bg }}
+              style={{ width: 96, height: 96, background: "#4F46E5" }}
             >
-              <Icon icon={s.icon} width={48} style={{ color: s.color }} />
+              <Icon icon={s.icon} width={64} style={{ color: "#ffffff" }} />
             </div>
           </div>
         ))}

@@ -4,7 +4,7 @@ import SlideShell from "../SlideShell";
 const services = [
   {
     icon: "mdi:lightbulb-outline",
-    iconColor: "var(--blue)",
+    iconColor: "#ffffff",
     iconSize: 17,
     title: "AI Labs",
     desc: "Workshops de co-criação e capacitação para descobrir onde a IA gera valor real no seu contexto — com o time diretamente envolvido na operação.",
@@ -12,7 +12,7 @@ const services = [
   },
   {
     icon: "mdi:chart-line",
-    iconColor: "var(--purple-dark)",
+    iconColor: "#ffffff",
     iconSize: 15,
     title: "Inteligência de negócios",
     desc: "Identificamos onde sua operação pode melhorar e desenvolvemos soluções em software e IA para que você tome decisões com base em dados reais do seu negócio.",
@@ -20,7 +20,7 @@ const services = [
   },
   {
     icon: "mdi:code-braces",
-    iconColor: "var(--blue-dark)",
+    iconColor: "#ffffff",
     iconSize: 15,
     title: "Desenvolvimento",
     desc: "Soluções proprietárias que se encaixam nos seus sistemas atuais — sem migrações, sem dependência de SaaS. Com acompanhamento contínuo para evoluir junto com o seu negócio.",
@@ -31,7 +31,7 @@ const services = [
 export default function Slide09Services({ total }: { total: number }) {
   return (
     <SlideShell slideNum={9} total={total}>
-      <div className="flex-shrink-0 mb-5">
+      <div className="flex-shrink-0 mb-5 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
           style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "var(--g900)" }}
@@ -47,29 +47,32 @@ export default function Slide09Services({ total }: { total: number }) {
               className="rounded-2xl flex flex-col gap-[10px] transition-all"
               style={{
                 padding: "20px 22px",
-                border: s.featured ? "none" : "1px solid var(--g200)",
-                background: s.featured ? "var(--dark)" : "var(--white)",
+                background: s.featured
+                  ? "linear-gradient(135deg, #EEF0FF 0%, #EDE8FF 100%)"
+                  : "linear-gradient(135deg, #F0EBFF 0%, #EEF0FF 100%)",
+                border: s.featured ? "none" : "1px solid #E0E7FF",
+                borderTop: s.featured ? "3px solid #6366F1" : undefined,
               }}
             >
               <div
                 className="w-8 h-8 rounded-[9px] flex items-center justify-center flex-shrink-0"
-                style={{ background: s.featured ? "rgba(255,255,255,0.09)" : "var(--bg)" }}
+                style={{ background: "#4F46E5" }}
               >
                 <Icon icon={s.icon} width={s.iconSize} style={{ color: s.iconColor }} />
               </div>
               <h3
                 className="font-[family-name:var(--font-jakarta)] font-semibold tracking-[-0.01em]"
                 style={{
-                  fontSize: s.featured ? 20 : 18,
-                  color: s.featured ? "var(--white)" : "var(--g900)",
-                  marginTop: s.featured ? 6 : 0,
+                  fontSize: 18,
+                  color: "var(--g900)",
+                  marginTop: 0,
                 }}
               >
                 {s.title}
               </h3>
               <p
                 className="text-[14px] leading-[1.55]"
-                style={{ color: s.featured ? "rgba(255,255,255,0.68)" : "var(--g500)" }}
+                style={{ color: "var(--g500)" }}
               >
                 {s.desc}
               </p>

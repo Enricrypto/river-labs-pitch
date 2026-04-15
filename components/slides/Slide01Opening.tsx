@@ -22,11 +22,11 @@ export default function Slide01Opening({ total }: { total: number }) {
             <div
               key={o.letter}
               className="flex items-start gap-[9px] px-[14px] py-3 rounded-[11px] border cursor-default transition-all"
-              style={{ borderColor: "var(--g200)", background: "var(--white)" }}
+              style={{ borderColor: "#E0E7FF", background: "var(--white)" }}
             >
               <span
                 className="font-[family-name:var(--font-jakarta)] text-[10px] font-bold rounded-[5px] px-[6px] py-[2px] flex-shrink-0 mt-[1px]"
-                style={{ color: "var(--blue-dark)", background: "rgba(163,191,250,0.14)" }}
+                style={{ color: "#6366F1", background: "rgba(99,102,241,0.12)" }}
               >
                 {o.letter}
               </span>

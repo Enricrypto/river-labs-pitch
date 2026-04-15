@@ -7,36 +7,36 @@ const cards = [
   {
     position: "absolute left-1/2 top-0 -translate-x-1/2",
     label: "Co-criamos",
-    labelColor: "var(--blue-dark)",
+    labelColor: "#6366F1",
     text: "Junto ao time da operação",
-    hoverBorder: "rgba(163,191,250,0.65)",
-    hoverShadow: "rgba(163,191,250,0.28)",
-    hoverBg: "rgba(163,191,250,0.06)",
+    hoverBorder: "rgba(99,102,241,0.65)",
+    hoverShadow: "rgba(99,102,241,0.28)",
+    hoverBg: "rgba(99,102,241,0.06)",
   },
   {
     position: "absolute left-0 bottom-0",
     label: "Capacitamos",
-    labelColor: "var(--green-dark)",
+    labelColor: "#818CF8",
     text: "Treinamos o time para usar e evoluir a ferramenta",
-    hoverBorder: "rgba(181,234,215,0.65)",
-    hoverShadow: "rgba(181,234,215,0.28)",
-    hoverBg: "rgba(181,234,215,0.06)",
+    hoverBorder: "rgba(129,140,248,0.65)",
+    hoverShadow: "rgba(129,140,248,0.28)",
+    hoverBg: "rgba(129,140,248,0.06)",
   },
   {
     position: "absolute right-0 bottom-0",
     label: "Entregamos",
-    labelColor: "var(--purple-dark)",
+    labelColor: "#4F46E5",
     text: "Uma ferramenta pronta para ser usada — na sua infraestrutura",
-    hoverBorder: "rgba(215,189,226,0.65)",
-    hoverShadow: "rgba(215,189,226,0.28)",
-    hoverBg: "rgba(215,189,226,0.06)",
+    hoverBorder: "rgba(79,70,229,0.65)",
+    hoverShadow: "rgba(79,70,229,0.28)",
+    hoverBg: "rgba(79,70,229,0.06)",
   },
 ];
 
 export default function Slide11Triad({ total }: { total: number }) {
   return (
     <SlideShell slideNum={11} total={total}>
-      <div className="flex-shrink-0 mb-4">
+      <div className="flex-shrink-0 mb-4 pt-4">
         <h2
           className="font-[family-name:var(--font-playfair)] font-medium"
           style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "var(--g900)" }}
@@ -53,10 +53,10 @@ export default function Slide11Triad({ total }: { total: number }) {
             preserveAspectRatio="xMidYMid meet"
             className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
           >
-            <polygon points="190,18 30,252 350,252" fill="none" stroke="rgba(163,191,250,0.18)" strokeWidth="1.5" strokeDasharray="6,4" />
-            <line x1="190" y1="140" x2="190" y2="58" stroke="rgba(163,191,250,0.4)" strokeWidth="1.5" strokeDasharray="4,3" />
-            <line x1="190" y1="140" x2="88" y2="222" stroke="rgba(181,234,215,0.4)" strokeWidth="1.5" strokeDasharray="4,3" />
-            <line x1="190" y1="140" x2="292" y2="222" stroke="rgba(215,189,226,0.4)" strokeWidth="1.5" strokeDasharray="4,3" />
+            <polygon points="190,18 30,252 350,252" fill="none" stroke="rgba(99,102,241,0.18)" strokeWidth="1.5" strokeDasharray="6,4" />
+            <line x1="190" y1="140" x2="190" y2="58" stroke="rgba(99,102,241,0.4)" strokeWidth="1.5" strokeDasharray="4,3" />
+            <line x1="190" y1="140" x2="88" y2="222" stroke="rgba(129,140,248,0.4)" strokeWidth="1.5" strokeDasharray="4,3" />
+            <line x1="190" y1="140" x2="292" y2="222" stroke="rgba(79,70,229,0.4)" strokeWidth="1.5" strokeDasharray="4,3" />
           </svg>
 
           {/* Center node */}
@@ -69,7 +69,7 @@ export default function Slide11Triad({ total }: { total: number }) {
               boxShadow: "0 4px 24px rgba(0,0,0,0.22)",
             }}
           >
-            <Icon icon="mdi:account-group-outline" width={20} style={{ color: "var(--blue)" }} />
+            <Icon icon="mdi:account-group-outline" width={20} style={{ color: "#ffffff" }} />
             <span className="font-[family-name:var(--font-jakarta)] text-[10px] font-bold uppercase tracking-[0.1em] mt-[2px]" style={{ color: "rgba(255,255,255,0.6)" }}>
               Pessoas
             </span>
