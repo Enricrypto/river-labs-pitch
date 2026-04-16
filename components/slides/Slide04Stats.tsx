@@ -1,5 +1,29 @@
 import SlideShell from "../SlideShell";
 
+function DotCluster({ id }: { id: string }) {
+  return (
+    <svg
+      className="absolute top-6 right-0 w-full h-36 pointer-events-none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern id={`dots-${id}`} x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+          <circle cx="1.5" cy="1.5" r="1.5" fill="rgba(165,180,252,0.2)" />
+        </pattern>
+        <radialGradient id={`fade-${id}`} cx="100%" cy="0%" r="70%" gradientUnits="objectBoundingBox">
+          <stop offset="0%"   stopColor="white" stopOpacity="1" />
+          <stop offset="55%"  stopColor="white" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="white" stopOpacity="0" />
+        </radialGradient>
+        <mask id={`mask-${id}`}>
+          <rect width="100%" height="100%" fill={`url(#fade-${id})`} />
+        </mask>
+      </defs>
+      <rect width="100%" height="100%" fill={`url(#dots-${id})`} mask={`url(#mask-${id})`} />
+    </svg>
+  );
+}
+
 const stats = [
   {
     num: "88%",
@@ -36,15 +60,16 @@ export default function Slide04Stats({ total }: { total: number }) {
       <div className="flex-1 flex items-center">
         <div
           className="grid grid-cols-3 rounded-[14px] overflow-hidden w-full"
-          style={{ gap: 1, background: "rgba(255,255,255,0.08)" }}
+          style={{ gap: 1, background: "rgba(99,102,241,0.15)" }}
         >
-        {stats.map((s) => (
+        {stats.map((s, i) => (
           <div
             key={s.num}
-            className="flex flex-col justify-between"
-            style={{ background: "#11161c", padding: "24px 22px", border: "1px solid rgba(255,255,255,0.04)" }}
+            className="flex flex-col justify-between relative overflow-hidden"
+            style={{ background: "rgba(99,102,241,0.18)", padding: "24px 22px", border: "1px solid rgba(99,102,241,0.25)" }}
           >
-            <div>
+            <DotCluster id={`stat-${i}`} />
+            <div className="relative z-10">
               <div
                 className="font-[family-name:var(--font-playfair)] font-medium leading-none tracking-[-0.04em]"
                 style={{ fontSize: "clamp(44px,6vw,76px)", color: s.color }}
@@ -55,7 +80,7 @@ export default function Slide04Stats({ total }: { total: number }) {
                 {s.label}
               </div>
             </div>
-            <div className="text-[11px] italic mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <div className="relative z-10 text-[11px] italic mt-3" style={{ color: "rgba(255,255,255,0.4)" }}>
               {s.source}
             </div>
           </div>
