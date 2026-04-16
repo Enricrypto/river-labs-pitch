@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Slide01Opening from "@/components/slides/Slide01Opening";
 import Slide02Cover from "@/components/slides/Slide02Cover";
 import Slide03Accel from "@/components/slides/Slide03Accel";
@@ -34,6 +34,8 @@ const slides = [
 
 export default function Presentation() {
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
 
   const prev = useCallback(() => setCurrent((c) => Math.max(0, c - 1)), []);
   const next = useCallback(() => setCurrent((c) => Math.min(TOTAL - 1, c + 1)), []);
@@ -47,11 +49,25 @@ export default function Presentation() {
     return () => window.removeEventListener("keydown", onKey);
   }, [next, prev]);
 
+  function onTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) next();
+      else prev();
+    }
+  }
+
   const SlideComponent = slides[current];
   const progress = ((current + 1) / TOTAL) * 100;
 
   return (
-    <div className="w-screen h-screen flex flex-col overflow-hidden" style={{ background: slideBgs[current] ?? "var(--bg)", transition: "background 0.3s ease" }}>
+    <div className="w-screen flex flex-col overflow-hidden" style={{ height: "100dvh", background: slideBgs[current] ?? "var(--bg)", transition: "background 0.3s ease" }}>
       {/* Progress bar */}
       <div className="w-full h-[2px] flex-shrink-0" style={{ background: "var(--g100)" }}>
         <div
@@ -61,7 +77,11 @@ export default function Presentation() {
       </div>
 
       {/* Slide area */}
-      <div className="flex-1 relative overflow-hidden flex items-center justify-center">
+      <div
+        className="flex-1 relative overflow-hidden flex items-center justify-center"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {/* Click zones */}
         <button
           onClick={prev}
@@ -79,7 +99,7 @@ export default function Presentation() {
         {/* Slide frame — 16:9 aspect ratio, scales to viewport */}
         <div
           className="relative w-full"
-          style={{ maxWidth: "min(100vw, calc(100vh * 16/9))", aspectRatio: "16/9" }}
+          style={{ maxWidth: "min(100vw, calc(100dvh * 16/9))", aspectRatio: "16/9" }}
         >
           <div className="absolute inset-0">
             <SlideComponent total={TOTAL} />
@@ -88,27 +108,31 @@ export default function Presentation() {
       </div>
 
       {/* Navigation controls */}
-      <div className="flex-shrink-0 flex items-center justify-center gap-3 py-2">
+      <div className="flex-shrink-0 flex items-center justify-center gap-3 py-2 md:py-2" style={{ paddingTop: "clamp(6px,1.2vh,8px)", paddingBottom: "clamp(6px,1.2vh,8px)" }}>
         <button
           onClick={prev}
           disabled={current === 0}
-          className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
-          style={{ background: current === 0 ? "transparent" : "var(--g100)", color: current === 0 ? "var(--g300)" : "var(--g700)" }}
+          className="rounded-lg flex items-center justify-center transition-colors"
+          style={{
+            width: "clamp(36px,4vw,32px)", height: "clamp(36px,4vw,32px)",
+            background: current === 0 ? "transparent" : "var(--g100)",
+            color: current === 0 ? "var(--g300)" : "var(--g700)",
+          }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
 
-        <div className="flex gap-1">
+        <div className="flex items-center" style={{ gap: "clamp(4px,0.6vw,6px)" }}>
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               className="rounded-full transition-all"
               style={{
-                width: i === current ? 20 : 6,
-                height: 6,
+                width: i === current ? "clamp(16px,2vw,20px)" : "clamp(8px,0.8vw,8px)",
+                height: "clamp(8px,0.8vw,8px)",
                 background: i === current ? "var(--blue-mid)" : "var(--g200)",
               }}
             />
@@ -118,8 +142,12 @@ export default function Presentation() {
         <button
           onClick={next}
           disabled={current === TOTAL - 1}
-          className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
-          style={{ background: current === TOTAL - 1 ? "transparent" : "var(--g100)", color: current === TOTAL - 1 ? "var(--g300)" : "var(--g700)" }}
+          className="rounded-lg flex items-center justify-center transition-colors"
+          style={{
+            width: "clamp(36px,4vw,32px)", height: "clamp(36px,4vw,32px)",
+            background: current === TOTAL - 1 ? "transparent" : "var(--g100)",
+            color: current === TOTAL - 1 ? "var(--g300)" : "var(--g700)",
+          }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 15 12 9 6" />
